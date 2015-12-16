@@ -1,0 +1,21 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 374, in script
+    mc "Are we there yet?"
+TypeError: %c requires int or char
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 374, in script
+    mc "Are we there yet?"
+  File "E:\Programs\Ren'Py\renpy\renpy\ast.py", line 593, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "E:\Programs\Ren'Py\renpy\renpy\exports.py", line 1010, in say
+    what = what % tag_quoting_dict
+TypeError: %c requires int or char
+
+Windows-7-6.1.7601-SP1
+Ren'Py 6.99.3.404
+Super Waifu Wars Demo 0.0
