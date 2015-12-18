@@ -184,18 +184,14 @@ screen main_menu():
         style "mm_root"
 
     # The main menu buttons.
-    frame:
-        style_group "mm"
-        xalign .98
-        yalign .98
-
-        has vbox
-
-        textbutton _("Start Game") action Start()
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit(confirm=False)
+    imagemap:
+        ground "mainmenubase.png"
+        hover "mainmenuhover.png"
+        
+        hotspot (258, 187, 295, 125) action Start()
+        hotspot (264, 310, 284, 80) action ShowMenu("load")
+        hotspot (261, 392, 296, 79) action ShowMenu("preferences")
+        hotspot (271, 471, 284, 93) action Quit(confirm=False)
 
 init -2:
 

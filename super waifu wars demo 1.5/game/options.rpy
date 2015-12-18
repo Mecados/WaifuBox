@@ -71,12 +71,12 @@ init -1 python hide:
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        mm_root = "cockpit-blend8.png",
+        mm_root = "mainmenubg.png",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "#59667a",
+        gm_root = "mainmenubg.png",
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
@@ -96,23 +96,23 @@ init -1 python hide:
     ## are the size of the left/right and top/bottom borders,
     ## respectively.
 
-    # style.window.background = Frame("frame.png", 12, 12)
+    style.window.background = Frame("Textbox.png", 25, 25)
 
     ## Margin is space surrounding the window, where the background
     ## is not drawn.
 
-    # style.window.left_margin = 6
-    # style.window.right_margin = 6
-    # style.window.top_margin = 6
-    # style.window.bottom_margin = 6
+    style.window.left_margin = 10
+    style.window.right_margin = 10
+    #style.window.top_margin = 6
+    style.window.bottom_margin = 18
 
     ## Padding is space inside the window, where the background is
     ## drawn.
 
-    # style.window.left_padding = 6
-    # style.window.right_padding = 6
-    # style.window.top_padding = 6
-    # style.window.bottom_padding = 6
+    style.window.left_padding = 25
+    style.window.right_padding = 25
+    style.window.top_padding = 10
+    style.window.bottom_padding = 6
 
     ## This is the minimum height of the window, including the margins
     ## and padding.
