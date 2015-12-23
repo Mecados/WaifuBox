@@ -63,6 +63,8 @@ image gc = "gc_neutral.png"
 image gc bored = "gc_bored.png"
 image gc disoriented = "gc_disoriented.png"
 image gc upset = "gc_upset.png"
+
+image kq = "dinosaur.png"
 # Default display:
 #show ai at center:
 #        yalign 0.0
@@ -722,7 +724,7 @@ label end_dino:
     mc "It can’t be..."
 
     "*dinosaur sounds*"
-
+    show kq with chardissolve
     kq "It’s I, Kanserous Quiboo the tyrannosaurus rex! I have come to end your Kanserous existence."
 
     mc "I don’t even know you and this is crazy. Why would you even end me if you and I are both Kanserous"
@@ -741,7 +743,7 @@ label end_dino:
 
     kq "An opening!"
 
-    "Kanserous Quiboo bit deeply into my arm, smearing blood into my eyes as he tore my arm."
+    "Kanserous Quiboo bit deeply into my arm, smearing blood on my eyes as he tore my arm."
 
     um "Hiroo, why is it that you try so hard to live? Look at your missing arm and burning eyes, the pain you are enduring is worse than death itself."    
 
@@ -755,7 +757,7 @@ label end_dino:
 
     ai "Hiroo, your mental state is unstable. Calm down and carefully find a way out of this situation."
 
-    mc "The dinosaurs are too big in such a confined space ship they can effortlessly crush the shit out of me." 
+    mc "The dinosaur is too big, in such a confined space ship it can effortlessly crush me." 
 
     um "Billion years ago, the Dinosaurs on our home planet but they were all wiped out by a meteor. "
     um "Us humans stand no chance when it comes to the great forces in this universe. We are dusts inside a planet of the size of a dust in this universe. "
@@ -792,21 +794,26 @@ label end_dino:
     um "If Vietnamese soldiers get to kamikaze with bombs that has the same destructive power as a space ship engine, maybe they won’t get to use as many soldiers." 
 
     "Hopefully I'll make it to the engine room before the dinosaur catches on"
-
+    hide kq with chardissolve
+    show ai_serious with chardissolve
     ai "Why are you running toward the engine room? Are you planning to make this ship self-destruct? Don’t make such a selfish decision. "
 
     mc "Look, you stupid computer, I’m about to claim glory by killing a dinosaur and that isn’t something a robot like you can comprehend. "
+
+    scene engineroom
+
+    show kq with chardissolve
 
     kq "I will end you before you can blow up the ship!"
 
     "The dinosaur charges at me flinging my body into the engine. I feel my body incinerate, flesh and skin burning down to my bones"    
 
     "The should be enough to cause a nuclear explosion" 
+    show ai_tearful with chardissolve
 
     ai "This is why I don’t understand huma….. "
-
-    #fade to black
-    #change to space
+    scene black with dissolve
+    scene space with fade
 
     "The ship has been reported missing to the general public. It wasn't until scientist several eons later manage to find and recover AI’s data." 
     "From it they discoverd the records of Hiroo's final moments fighting against Kanserous Quiboo and his heroic actions of self sacrifice to save humanity."
