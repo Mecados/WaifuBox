@@ -86,18 +86,19 @@ image gc upset = "gc_upset.png"
 #26/05/2015 -- callbacks placed for chars.
 #------------------------CHAR DECLARATIONS------------------------#
 # MAIN CHARACTERS
-define mc = Character('Hiroo Onoda', 
-    color="#c8ffc8")
+define mc = Character('Hiroo Onoda', color="#c8ffc8")
        # Working Name: MC-kun
-define ai = Character('AI-Sempai', 
-    color="#c8c8ff")
+define ai = Character('AI-Sempai', color="#c8c8ff", image="ai")
        # Working Name: AI-Sempai
-define gc = Character('Girl-chan', 
-    color="#ffc8c8")
+define gc = Character('Girl-chan', color="#ffc8c8", image="gc")
        # Working Name: Girl-chan
-define hs = Character('Husbando-sama',
-    color="#c8c8c8")
+define hs = Character('Husbando-sama',color="#c8c8c8", image="hs")
        # Working Name: Husbando-sama
+define kq = Character('Kanserous Quiboo', color="#c8ffc8", image="kq")
+        #Need to change word color
+        #Need to add images
+define um = Character('Uncle Minh', color="#c8ffc8")
+define uk = Character('???', color="#c8ffc8")
 
 
 define n = Character(None, kind=nvl, what_prefix = "{i}", what_suffix = "{/i}")
@@ -708,12 +709,109 @@ label dokidoki:
     jump end_demo
     
 #---------------------------------  ENDINGS ------------------------------------#
-
+#Make the dinosaur slowly weeb
 label end_dino:
     stop music fadeout 2.0
     pause 2.0
     play music "music_MassiveCoronary.mp3"
-    "DINO BAD END. MUAHAHAHAHAH."
+    mc "I don’t remember the hallway being this far..."
+
+    mc "I have to make it to the engine room"
+    "*dinosaur sounds*"
+
+    mc "It can’t be..."
+
+    "*dinosaur sounds*"
+
+    kq "It’s I, Kanserous Quiboo the tyrannosaurus rex! I have come to end your Kanserous existence."
+
+    mc "I don’t even know you and this is crazy. Why would you even end me if you and I are both Kanserous"
+
+    kq "It is because we are both Kanserous that we must fight."
+
+    kq "Have at thee!" 
+
+    "I dodge left to avoid the hook"
+
+    uk "I didn’t remember this part in the Vietnam war, what the hell happened? Back then I fight soldiers, not monster. This ain’t Monster Hunter." 
+
+    mc "Who are you?"
+
+    um "I am your Uncle Minh from the Vietnam war." 
+
+    kq "An opening!"
+
+    "Kanserous Quiboo bit deeply into my arm, smearing blood into my eyes as he tore my arm."
+
+    um "Hiroo, why is it that you try so hard to live? Look at your missing arm and burning eyes, the pain you are enduring is worse than death itself."    
+
+    mc "I’m not gonna listen to some Vietnamese Uncle about whether I should live or die. "
+
+    "I slip in a mix of my own blood and wires as I try to get away"
+
+    mc "Argghh!!! Why???? Must I die here. Having accomplish nothing. "
+
+    um "Hiroo, why do you fear death, if you are afraid of the scene before you, crash your head onto the iron wall. Whether it’s hell or heaven, it can’t be worse than here." 
+
+    ai "Hiroo, your mental state is unstable. Calm down and carefully find a way out of this situation."
+
+    mc "The dinosaurs are too big in such a confined space ship they can effortlessly crush the shit out of me." 
+
+    um "Billion years ago, the Dinosaurs on our home planet but they were all wiped out by a meteor. "
+    um "Us humans stand no chance when it comes to the great forces in this universe. We are dusts inside a planet of the size of a dust in this universe. "
+    um "Humanity has progressed far enough into space with you as their representative. There is no greater glory in this. "
+
+    mc "Perhaps I will die today by a mystery has not yet been solved by the human race, and tomorrow someone will honor me by solving the mystery. When I think about it, my death isn’t at all meaningless. "
+
+    "I back into a wall, with know way out save for behind the behometh"
+
+    mc "Simple"
+
+    mc "I must kill this monsterno matter what it takes, I don't plan on being eaten alive."
+
+    um "I love the way you think, Hiroo. I still remember seeing those eyes in the Vietnam war, the eyes of a kamikaze. How many Vietnamese children strap bomb around themselves and bravely run toward the enemy base. "
+
+    mc "But I’m not all that brave, I didn’t fight on the frontline, I’m a coward who hide in his spaceship when a battle breaks out. "
+
+    um "But you are a kamikaze now. Bear that title proudly “suicider”. "
+
+    "Grabing some loose wiring I charge at the beast"
+
+    mc "Eat this!"
+
+    kq "Did you really think silly wires would hurt me?"
+
+    "Of course I knew the weak current was not enought to pass through the monster's hide" 
+
+    mc "I must get pass him into the engine room!"
+
+    um "Ohohoho, making your own space ship blow up. "
+
+    mc "Yeah old man, I always wondered what a sinking space ship’s looks from the inside." 
+
+    um "If Vietnamese soldiers get to kamikaze with bombs that has the same destructive power as a space ship engine, maybe they won’t get to use as many soldiers." 
+
+    "Hopefully I'll make it to the engine room before the dinosaur catches on"
+
+    ai "Why are you running toward the engine room? Are you planning to make this ship self-destruct? Don’t make such a selfish decision. "
+
+    mc "Look, you stupid computer, I’m about to claim glory by killing a dinosaur and that isn’t something a robot like you can comprehend. "
+
+    kq "I will end you before you can blow up the ship!"
+
+    "The dinosaur charges at me flinging my body into the engine. I feel my body incinerate, flesh and skin burning down to my bones"    
+
+    "The should be enough to cause a nuclear explosion" 
+
+    ai "This is why I don’t understand huma….. "
+
+    #fade to black
+    #change to space
+
+    "The ship has been reported missing to the general public. It wasn't until scientist several eons later manage to find and recover AI’s data." 
+    "From it they discoverd the records of Hiroo's final moments fighting against Kanserous Quiboo and his heroic actions of self sacrifice to save humanity."
+    "He was the only man to ever slay a dinosaur and save humanity. Through his actions, the name Hiroo the dinosaur slayer became renown throughout the galaxy."
+
     jump credits
     
 # NOTE: THE BELOW LABEL IS TEMPORARY AND ONLY FOR THE DEMO.
