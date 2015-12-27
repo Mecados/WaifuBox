@@ -2,12 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 717: expected statement.
-    mc I don’t remember the hallway being this far...
-                                                  ^
+File "game/script.rpy", line 734: expected end of line
+    stop music with fadeout 0.1
+               ^
 
-File "game/script.rpy", line 719: expected statement.
-    mc I have to make it to the engine room
-                                           ^
-
-Ren'Py Version: Ren'Py 6.99.6.739
+Ren'Py Version: Ren'Py 6.99.3.404

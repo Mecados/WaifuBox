@@ -16,6 +16,14 @@ game/beep.wav matches ** ([u'all']).
 game/blackbg.jpg matches ** ([u'all']).
 game/blip.mp3 matches ** ([u'all']).
 game/bytecode.rpyb matches ** ([u'all']).
+game/cache/ matches ** ([u'all']).
+game/cache/bytecode.rpyb matches ** ([u'all']).
+game/cache/im-5043bfc27ee0b0b4c41d1bb864fdeece-5f2753e0.png matches ** ([u'all']).
+game/cache/im-c9a6fc7c3a2dc8a39a253d44e01debbb-4cd88b0c.png matches ** ([u'all']).
+game/cache/im-c9a6fc7c3a2dc8a39a253d44e01debbb-5f2753e0.png matches ** ([u'all']).
+game/cache/im-f1608634d204ad3c6cd3a7a03adae77f-4cd88b0c.png matches ** ([u'all']).
+game/cache/pyanalysis.rpyb matches ** ([u'all']).
+game/cache/screens.rpyb matches ** ([u'all']).
 game/click.wav matches ** ([u'all']).
 game/cockpit-blend.png matches ** ([u'all']).
 game/cockpit-blend2.png matches ** ([u'all']).
@@ -30,6 +38,7 @@ game/cockpit_old2.jpg matches ** ([u'all']).
 game/corridor.jpg matches ** ([u'all']).
 game/cryosleep-room(close_up)-001.png matches ** ([u'all']).
 game/cryosleep-room-001.png matches ** ([u'all']).
+game/Dinosaur.png matches ** ([u'all']).
 game/engine-room-002.png matches ** ([u'all']).
 game/gc_bored.png matches ** ([u'all']).
 game/gc_disoriented.png matches ** ([u'all']).
@@ -43,8 +52,12 @@ game/hs_sleep.png matches ** ([u'all']).
 game/hubble.jpg matches ** ([u'all']).
 game/husbando-exterior-005.png matches ** ([u'all']).
 game/husbando-interior-001.png matches ** ([u'all']).
+game/I lost control of my life.png matches ** ([u'all']).
 game/images/ matches ** ([u'all']).
 game/images/cockpit.jpg matches ** ([u'all']).
+game/MainMenuBase.png matches ** ([u'all']).
+game/Mainmenubg.png matches ** ([u'all']).
+game/MainMenuHover.png matches ** ([u'all']).
 game/media-room-005.png matches ** ([u'all']).
 game/music_DarkRock.mp3 matches ** ([u'all']).
 game/music_Fenster.mp3 matches ** ([u'all']).
@@ -83,6 +96,7 @@ game/sfx_strawslurp.mp3 matches ** ([u'all']).
 game/simroom.jpg matches ** ([u'all']).
 game/simulator-room-001.png matches ** ([u'all']).
 game/space.jpg matches ** ([u'all']).
+game/Textbox.png matches ** ([u'all']).
 game/whitebg.jpg matches ** ([u'all']).
 log.txt matches log.txt (None).
 project.json matches project.json (None).

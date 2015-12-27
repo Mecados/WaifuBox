@@ -94,13 +94,10 @@ define ai = Character('AI-Sempai', color="#c8c8ff", image="ai")
        # Working Name: AI-Sempai
 define gc = Character('Girl-chan', color="#ffc8c8", image="gc")
        # Working Name: Girl-chan
+define ha = Character('Hoshiko Akagami', color="#ffc8c8", image="gc")
+       # Girl-chan's name after her name reveal
 define hs = Character('Husbando-sama',color="#c8c8c8", image="hs")
        # Working Name: Husbando-sama
-define kq = Character('Kanserous Quiboo', color="#c8ffc8", image="kq")
-        #Need to change word color
-        #Need to add images
-define um = Character('Uncle Minh', color="#c8ffc8")
-define uk = Character('???', color="#c8ffc8")
 
 
 define n = Character(None, kind=nvl, what_prefix = "{i}", what_suffix = "{/i}")
@@ -114,6 +111,14 @@ define s1a = Character('???', color="#c8c8c8")
        # MC-kun's opponent in the very first scene
 define s6a = Character('???', color="#c8c8c8")
        # Husbando-sama before his name is known
+
+# DINOSAUR ENDING CHARACTERS
+define kq = Character('Kanserous Quiboo', color="#eeeec8", image="kq")
+        # Need to change word color
+        # Need to add images
+define um = Character('Uncle Minh', color="#c8eeee")
+define uk = Character('???', color="#c8eeee")
+        # Uncle Minh before his name is known
 
 #------------------------------CONFIG------------------------------#
 
@@ -166,6 +171,8 @@ label start:
     $ annoyed = False # boolean that changes scene 7, possibly set to true in scene 7
     $ thirsty = False # boolean that changes scene 8, possibly set to true in scene 7
     
+#-------------------------------------  COMMON ROUTE  -------------------------------------#
+
 #---------------------------- SCENE 1: Inside the Simulator----------------------------#
 
     stop music fadeout 1.0
@@ -603,7 +610,7 @@ label dokidoki:
     mc "Not to mention the excellent animation, writing and soundtrack. I listen to the ED, ‘Butterfly Cute’ on a daily basis, and every once in a while AI-sempai will dress up in a heart costume for me."
     mc "Overall, I’d have to say it was my pick for anime of the year and #4 in my top nine after ‘Chocoloids’, ‘Dead Battle Zero’, and ‘Yuri Yuri Mechriders: Knights of the Millenial Spiral’."
     show gc upset
-    with dissolve
+    with chardissolve
     gc "I still can’t believe you like ‘Doki-Doki Heart Prefecture’."
     gc "I thought it was just overly sappy middle school bullshit that fetishizes little girls and internal organs in the most boring way."
     gc "The characters, especially Ayase were as flat as their own chests."
@@ -695,6 +702,7 @@ label dokidoki:
     scene bg cockpit at truecenter
     with dissolve
     nn"A new mech appeared, this one was clad in blue armour. A special unit, maybe the leader."
+    play sound "sfx_comet.mp3"
     nn"It darted quickly, faster than I could lock on. Looked like it was trying to run."
     mc "Fire the flak gun to limit his maneuvering. I’ll take the final shot."
     play sound "sfx_grenade.mp3"
@@ -707,126 +715,375 @@ label dokidoki:
     pause 1.0
     scene bg cockpit at truecenter
     nn"The mech exploded."
-    ai "More enemy mecha and ships detected."
+    mc "Can’t evade that, can you?!"
+    ai "More enemy mecha and ships detected. Appears to be two groups of mecha supported by several longer ranged craft, and a repair vessel."
+    mc "Alright. Here’s the plan. I’ll make the first group scatter by closing in and firing missiles at point blank, manually. You’ll fire the other weapons once the squad breaks."
+    play sound "sfx_alienmachinegun.mp3"
+    play sound2 "sfx_comet.mp3"
+    nn"I flew her directly into enemy fire. Others may think I’m reckless, but I’m not a coward. I see something I want, and I close in on it. I act. I am a hero."
+    # rumble effects + beeping
+    scene bg cockpit at Shake((0.48, 1.07, 0.5, 1.0), 1.0, dist=12)
+    play sound "sfx_smokealarm.mp3"
+    play sound2 "sfx_blast.mp3"
+    ai "Evasion failed. I am 45\% damaged."
+    mc "FIRE!"
+    play sound2 "sfx_missilelaunch.mp3"
+    nn"Not close enough. They evaded them too easily."
+    mc "Fuck, they’re circling me. They’re surrounding us! Full power to thrusters!"
+    scene bg cockpit3 at Shake((0.52, 1.11, 0.5, 1.0), 3.0, dist=15)
+    play sound "sfx_grenadeexplosion.mp3"
+    ai "Taking heavy damage. Emergency eject!"
+    mc "No, a Captain always goes down with his wAIfu. St—"
+    scene bg black
+    stop music fadeout 0.1
+    nn"It all went dark."
+    
+#---------------------------- SCENE 10: The Revelation ----------------------------#
+    scene bg white
+    with dissolve
+    pause 2.0
+    play sound "sfx_appear.mp3"
+    pause 2.0
+    scene bg simroom
+    with dissolve
+    nn"Light again. Valhalla."
+    nn"Wait. She’s here."
+    show gc at center:
+        yalign 0.0
+        zoom 0.4
+    with dissolve
+    gc "Hiroo, I’m sorry for what I said, but I need to talk to you."
+    nn"She would only apologize if she needed something. Selfish, typical bitch."
+    mc "What is it? What do you want from me?"
+    gc "Can we go somewhere private? Somewhere without AI-sempai’s prying eyes?"
+    nn"She’s actually kind of cute. I don’t want to walk all the way to the bedroom though."
+    mc "AI-sempai, cut all power to this room."
+    ai "Of course."
+    play sound "sfx_button.mp3"
+    scene bg black
+    nn"The lights went out. We were in pitch darkness, at least until my eyes adjusted."
+    gc "Hiroo, there is no war. The last time I was awake was two months ago, and there was no war then."
+    gc "Think about it, how would I know about ‘Doki-Doki Prefecture’ if I’d fallen asleep before the war?"
+    mc "What? Are you saying AI-sempai would lie to me?"
+    gc "Either she lied, or she’s misinformed."
+    mc "But it would be against her programming to put me in danger. Why would she make me feel like I’m in danger?"
+    mc "She’s programmed to love and take care of me, physically, mentally, emotionally and sexually. Whatever you’re saying makes no sense."
+    gc "Look, I have no reason to lie to you. I’m leaving soon, and you can come with me. I don’t want you in the hands of a dangerous AI."
+menu:
+    "She must be a Lolicon agent here to enslave me.":
+        $ hero_pts += 1
+        jump end_demo # or scene 11
+    "I can’t trust AI-sempai any longer.":
+        $ girl_pts += 1
+        jump end_trustgc
+
+#-------------------------------------  BRANCH A: END OF DECEPTION  -------------------------------------#
+
+label branch_a:
+    # will put stuff here later
     jump end_demo
     
-#---------------------------------  ENDINGS ------------------------------------#
-#Make the dinosaur slowly weeb
+#-------------------------------------  BRANCH B: TOO FAR GONE  -------------------------------------#
+
+label branch_b:
+    # will put stuff here later
+    jump end_demo
+
+#---------------------------------------------  ENDINGS ---------------------------------------------#
+
+#---------------------------- ENDING 4: Trust Girl-chan Ending ----------------------------#
+label end_trustgc:
+    mc "I think you’re right."
+    gc "I’m sorry, what?"
+    nn"It makes sense. I haven’t left the Kryptonite Phantom in years, and AI-sempai takes care of the automated supply runs. I can’t know for sure what’s going on out there."
+    nn"If what she says is true, then—"
+    gc "Well, what do you know? You actually do have a brain under that mound of lard on your shoulders."
+    mc "Alright bitch, if you insult me ONE MORE FUCKING TIME, I SWEAR I’M GOING TO—"
+    gc "Calm down, I was just joking."
+    mc "I DON’T THINK IT’S A GOOD TIME FOR JOKES RIGHT NOW!"
+    gc "You know what? You’re right about that."
+    gc "But before we talk about what we’re going to, you should take a few deep breaths and calm down."
+    nn"I do as she says. After all, a hero must never lose his composure."
+    pause 1.0
+    nn"I speak again when I’ve had about a minute to cool down."
+    mc "Let’s see... Since I can’t trust AI-sempai anymore, it looks like we’ll have to abandon my ship."
+    nn"As much as I hate it, it looks like we’ll have to cooperate from now on. I just have to get used to it."
+    gc "Luckily for us, it seems AI-sempai connected the airlocks of our ships while she was making the repairs."
+    mc "Well, that’s convenient. How do you know?"
+    gc "I walked by the airlock while you were doing whatever it was you were doing here. At any rate, that’s our ticket out of here."
+    gc "Come on. We should hurry."
+    mc "But... I can’t really walk. AI-sempai is responsible for bringing me around the ship."
+    gc "Figures. Well, that complicates things."
+    mc "Hang on. I have an idea."
+    gc "You? Really?"
+    mc "Just shut up and listen. You must have a pretty decent sized anime collection on your ship, don’t you?"
+    gc "Okay, what the fuck does that have to do with anything?"
+    mc "I could just tell AI-sempai that I’m visiting your ship to check out what you have. Its repairs must be almost finished by now, so it should be safe."
+    gc "You do know that anybody can just download stuff from the Futanet for free, right? She’d wonder why you don’t just do that."
+    nn"Damn, she’s actually right. What, then?"
+    mc "Well, it has to be something that’s actually on the ship. She did survey it, after all."
+    mc "Do you have something that might interest me? Something you can’t download. Like, physical objects or some shit like that?"
+    gc "Well, um, there is something..."
+    
+    scene bg hallway
+    show gc at center:
+        yalign 0.0
+        zoom 0.4
+    with CropMove(0.5, "wiperight")
+    nn"She helps me out of the simulator room, and out to the hallway."
+    nn"The door was still functioning. I suppose AI-sempai didn’t intend to trap us in there. I can be certain now that she didn’t hear us."
+    mc "AI-sempai, restore power to the simulator room."
+    ai "Yes, Captain."
+    mc "And can you transport me to the airlock? I want to visit Girl-chan’s ship."
+    mc "She says she’s got a huge collection of ‘Super Sexy Swimsuit Soldiers’ figures in her display room."
+    show gc bored
+    with chardissolve
+    gc "Oh god."
+    ai "I’ll gladly carry out your request, but I never saw you as a fan of that series."
+    mc "It’s the figures. The craftsmanship. I want to see how they compare to my mecha."
+    ai "Certainly."
+    nn"Her loving mechanical arms pick me up and take me across the hallways of the ship while Girl-chan walks by my side."
+    nn"AI-sempai doesn’t suspect a thing."
+    
+    scene bg airlock
+    show gc at center:
+        yalign 0.0
+        zoom 0.4
+    with CropMove(0.5, "wiperight")
+    ai "Since I’m connected to the Alien Cigarette, you don’t require any space suits on the way in."
+    ai "And Hiroo, it seems there is a wheelchair in its airlock’s storage compartment."
+    gc "That’s my grandmother’s old wheelchair. He can use that."
+    ai "Splendid. Have a nice visit, Hiroo."
+    nn"The airlock door opens, leading directly into the Alien Cigarette. Girl-chan opens the storage compartment, and removes the wheelchair. I carefully take a seat."
+    gc "Ugh, it’s sagging a little. I hope you don’t break it."
+    nn"Even in a dire situation such as this, she still manages to infuriate me. But I suppress my reaction."
+    nn"My life, defined by the need to save others, is in danger. I can’t die for any reason besides that."
+    nn"And so I must keep calm and press forward, so I can live to save lives someday."
+    
+    # need husbando interior repaired version, if handy
+    jump end_demo
+
+#---------------------------- ENDING 7: Dinosaur Ending ----------------------------#
 label end_dino:
-    stop music fadeout 2.0
-    pause 2.0
-    play music "music_MassiveCoronary.mp3"
+    stop music fadeout 1.0
     mc "I don’t remember the hallway being this far..."
-
-    mc "I have to make it to the engine room"
-    "*dinosaur sounds*"
-
+    mc "I have to make it to the engine room."
+    
+    play sound "sfx_trex2.mp3"
+    pause 1.0
+    
     mc "It can’t be..."
+    
+    play sound "sfx_trex1.mp3"
+    pause 1.5
+    
+    show kq at center:
+        yalign 0.0
+        xalign 1.4
+        zoom 0.7
+    with dissolve
+    play music "music_MassiveCoronary.mp3"
+    
+    kq "‘Tis I, Kanserous Quiboo the tyrannosaurus rex! I have come to end thy Kanserous existence."
 
-    "*dinosaur sounds*"
-    show kq with chardissolve
-    kq "It’s I, Kanserous Quiboo the tyrannosaurus rex! I have come to end your Kanserous existence."
+    show kq at center:
+        yalign 0.0
+        xalign 2.8
+        zoom 0.9
+    with chardissolve
+    mc "I don’t even know you and this is crazy. Why would you even end me if you and I are both Kanserous?"
 
-    mc "I don’t even know you and this is crazy. Why would you even end me if you and I are both Kanserous"
-
-    kq "It is because we are both Kanserous that we must fight."
-
-    kq "Have at thee!" 
-
-    "I dodge left to avoid the hook"
-
-    uk "I didn’t remember this part in the Vietnam war, what the hell happened? Back then I fight soldiers, not monster. This ain’t Monster Hunter." 
+    show kq at center:
+        yalign 0.0
+        xalign 0.0
+        zoom 1.2
+    with chardissolve
+    kq "‘Tis because we are both Kanserous that we must fight."
+    show kq at center:
+        yalign 0.0
+        zoom 1.6
+    with chardissolve
+    kq "Have at thee!"
+    
+    play sound "sfx_woosh.mp3"
+    show bg hallway at Shake((0.51, 1.08, 0.5, 1.0), 1.0, dist=4)
+    show kq at Shake((0.51, 1.08, 0.5, 1.0), 1.0, dist=4)
+    nn"I dodge left to avoid the hook."
+    show bg hallway at Shake((0.51, 1.08, 0.5, 1.0), 1.0, dist=2)
+    show kq at Shake((0.51, 1.08, 0.5, 1.0), 1.0, dist=8)
+    play sound "sfx_bite.mp3"
+    nn"But I fail. The Quiboo severs my right arm, splashing blood into my eyes."
+    
+    scene bg white with dissolve
+    uk "I didn’t remember this part in the Vietnam War, what the hell happened? Back then I fight soldiers, not monster. This ain’t Monster Hunter."
 
     mc "Who are you?"
 
-    um "I am your Uncle Minh from the Vietnam war." 
+    um "I am your Uncle Minh from the Vietnam War."
+    um "Hiroo, why is it that you try so hard to live? Look at your missing arm and burning eyes, the pain you are enduring is worse than death itself."
 
-    kq "An opening!"
+    mc "I’m not gonna listen to some Vietnamese Uncle about whether I should live or die!"
+    
+    scene bg hallway with dissolve:
+        xalign 1.0
+        zoom 1.2
+    nn"As I bleed out, I try to run."
+    scene bg hallway at Shake((-0.2, 0.5, 0.5, 1.0), 1.0, dist=8):
+        zoom 1.8
+    play sound "sfx_bounce.mp3"
+    nn"But I slip on my blood and trip over a wire coming out of the broken walls."
+    play sound "sfx_bonecrush.mp3"
+    nn"My left leg snaps."
 
-    "Kanserous Quiboo bit deeply into my arm, smearing blood on my eyes as he tore my arm."
-
-    um "Hiroo, why is it that you try so hard to live? Look at your missing arm and burning eyes, the pain you are enduring is worse than death itself."    
-
-    mc "I’m not gonna listen to some Vietnamese Uncle about whether I should live or die. "
-
-    "I slip in a mix of my own blood and wires as I try to get away"
-
-    mc "Argghh!!! Why???? Must I die here. Having accomplish nothing. "
-
-    um "Hiroo, why do you fear death, if you are afraid of the scene before you, crash your head onto the iron wall. Whether it’s hell or heaven, it can’t be worse than here." 
+    mc "ARGGHH!!!"
+    
+    nn"Why must I die here? Having accomplished nothing."
+    
+    scene bg white with dissolve
+    um "Hiroo, why do you fear death? If you are afraid of the scene before you, crash your head onto the iron wall."
+    um "Whether it’s hell or heaven, it can’t be worse than here."
 
     ai "Hiroo, your mental state is unstable. Calm down and carefully find a way out of this situation."
 
-    mc "The dinosaur is too big, in such a confined space ship it can effortlessly crush me." 
-
-    um "Billion years ago, the Dinosaurs on our home planet but they were all wiped out by a meteor. "
-    um "Us humans stand no chance when it comes to the great forces in this universe. We are dusts inside a planet of the size of a dust in this universe. "
-    um "Humanity has progressed far enough into space with you as their representative. There is no greater glory in this. "
-
-    mc "Perhaps I will die today by a mystery has not yet been solved by the human race, and tomorrow someone will honor me by solving the mystery. When I think about it, my death isn’t at all meaningless. "
-
-    "I back into a wall, with know way out save for behind the behometh"
-
-    mc "Simple"
-
-    mc "I must kill this monsterno matter what it takes, I don't plan on being eaten alive."
-
-    um "I love the way you think, Hiroo. I still remember seeing those eyes in the Vietnam war, the eyes of a kamikaze. How many Vietnamese children strap bomb around themselves and bravely run toward the enemy base. "
-
-    mc "But I’m not all that brave, I didn’t fight on the frontline, I’m a coward who hide in his spaceship when a battle breaks out. "
-
-    um "But you are a kamikaze now. Bear that title proudly “suicider”. "
-
-    "Grabing some loose wiring I charge at the beast"
-
-    mc "Eat this!"
-
-    kq "Did you really think silly wires would hurt me?"
-
-    "Of course I knew the weak current was not enought to pass through the monster's hide" 
-
-    mc "I must get pass him into the engine room!"
-
-    um "Ohohoho, making your own space ship blow up. "
-
-    mc "Yeah old man, I always wondered what a sinking space ship’s looks from the inside." 
-
-    um "If Vietnamese soldiers get to kamikaze with bombs that has the same destructive power as a space ship engine, maybe they won’t get to use as many soldiers." 
-
-    "Hopefully I'll make it to the engine room before the dinosaur catches on"
-    hide kq with chardissolve
-    show ai_serious with chardissolve
-    ai "Why are you running toward the engine room? Are you planning to make this ship self-destruct? Don’t make such a selfish decision. "
-
-    mc "Look, you stupid computer, I’m about to claim glory by killing a dinosaur and that isn’t something a robot like you can comprehend. "
-
-    scene engineroom
-
-    show kq with chardissolve
-
-    kq "I will end you before you can blow up the ship!"
-
-    "The dinosaur charges at me flinging my body into the engine. I feel my body incinerate, flesh and skin burning down to my bones"    
-
-    "The should be enough to cause a nuclear explosion" 
-    show ai_tearful with chardissolve
-
-    ai "This is why I don’t understand huma….. "
-    scene black with dissolve
-    scene space with fade
-
-    "The ship has been reported missing to the general public. It wasn't until scientist several eons later manage to find and recover AI’s data." 
-    "From it they discoverd the records of Hiroo's final moments fighting against Kanserous Quiboo and his heroic actions of self sacrifice to save humanity."
-    "He was the only man to ever slay a dinosaur and save humanity. Through his actions, the name Hiroo the dinosaur slayer became renown throughout the galaxy."
-
-    jump credits
+    mc "The dinosaur is too big. In such a confined space, it can effortlessly crush the shit out of me."
     
-# NOTE: THE BELOW LABEL IS TEMPORARY AND ONLY FOR THE DEMO.
-label end_demo:
-    nn"The end. Thanks for playing!"
-    nn"You ended with [hero_pts] hero points."
+    um "Billion years ago, the Dinosaurs on our home planet but they were all wiped out by a meteor."
+    um "Us human stand no chance when it comes to the great forces in this universe. We are dusts inside a planet of the size of a dust in this universe."
+    um "Humanity has progressed far enough into space with you as their representative. There is no greater glory in this."
+    scene bg hallway with dissolve:
+        xalign 1.0
+        yalign 0.5
+        zoom 1.8
+    
+    mc "Perhaps I will die today by a mystery that has not yet been solved by the human race, and tomorrow someone will honor me by solving the mystery."
+    mc "When I think about it, my death isn’t at all meaningless."
+    
+    scene bg hallway:
+        xalign 0.9
+        yalign 0.6
+        zoom 2.5
+    show kq at center:
+        yalign 0.9
+        zoom 2.5
+    with dissolve
+    nn"And yet I find myself crawling into a dead end. I see the shadow of the behemoth towering above me."
+    scene bg hallway:
+        xalign 1.0
+        yalign 0.3
+        zoom 2.5
+    show kq at center:
+        xalign 0.8
+        yalign 0.3
+        zoom 2.5
+    with dissolve
+    nn"But when I see a broken wire coming out the wall, sparks flying, I look him in face and crack smile."
+
+    mc "Bingo."
+    
+    scene bg white with dissolve
+    um "I love the way you think, Hiroo. I still remember seeing those eyes in the Vietnam War, the eyes of a kamikaze."
+    um "How many Vietnamese children strap bomb around themselves and bravely run toward the enemy base."
+
+    mc "But I’m not all that brave, I didn’t fight on the frontline. I’m a coward who hides in his spaceship when a battle breaks out."
+
+    um "But you are a kamikaze now. Bear that title proudly, suicider."
+    
+    scene bg hallway:
+        xalign 0.9
+        yalign 0.6
+        zoom 2.5
+    show kq at center:
+        yalign 0.9
+        zoom 2.5
+    with dissolve
+    nn"I grip the sparking wire and stick it to the dinosaur."
+
+    mc "EAT THIS BIATCH!"
+    
+    play sound "sfx_fizzle.mp3"
+    nn"But the dinosaur’s skin is too thick. The electricity has no effect."
+
+    kq "Fool! Didst thou really think silly wires would hurt me?"
+
+    mc "Dammit! Maybe if I can get to the engine room..."
+    
+    scene bg white with dissolve
+    um "Ohohoho, making your own ship blows up."
+
+    mc "Yeah old man, I always wondered what a sinking space ship looks like from the inside."
+
+    um "If Vietnamese soldiers get to kamikaze with bombs that has the same destructive power as a space ship engine, maybe they won’t get to use as many soldiers."
+    
+    scene bg hallway with dissolve
+    nn"I struggle to my feet. Hopefully I can make it to the engine room before the dinosaur catches on."
+    
+    show ai serious:
+        yalign 0.0
+        xalign 0.95
+        zoom 0.4
+    with dissolve
+    ai "Why are you running toward the engine room? Are you planning to make this ship self-destruct? Don’t make such a selfish decision!"
+
+    mc "Look, you stupid computer, I’m about to claim glory by killing a dinosaur and that isn’t something a robot like you can comprehend."
+    
+    hide ai with dissolve
+    scene bg hallway with dissolve:
+        xalign 1.0
+        yalign 0.4
+        zoom 1.8
+    nn"I limp towards the engine room, somehow managing to outrun the dinosaur."
+
+    scene bg engineroom with CropMove(0.5, "wiperight")
+    
+    nn"But just as I open the engine room door..."
+
+    show kq at center:
+        xalign 0.8
+        yalign 0.3
+        zoom 2.2
+    with dissolve
+    kq "I will end you before you can blow up the ship!"
+    
+    show kq at Shake((-0.4, 0.7, 0.5, 1.0), 1.0, dist=8)
+    play sound "sfx_trex1.mp3"
+    pause 1.5
+    play sound2 "sfx_crash.mp3"
+    scene bg black
+    stop music fadeout 0.1
+    pause 1.5
+    nn"The dinosaur charges at me, flinging me towards the engine."
+    play music "sfx_fireplace.mp3" fadein 0.5
+    nn"I begin to melt from its searing heat."
+    nn"First the flesh. Then the nerve and muscle tissue. Then my bones and internal organs."
+    nn"The insides of my body drive the engine wild."
+    nn"That should be enough to cause a nuclear explosion."
+    nn"Before I lose the remaining life left in me, I hear her last words."
+
+    show ai tearful at center:
+        yalign 0.0
+        zoom 0.4
+    with dissolve
+    ai "This is why I don’t understand humans..."
+    stop music fadeout 1.0
+    scene black with dissolve
+    pause 1.0
+    scene bg space with fade
+
+    window show
+    with dissolve
+    play music "music_HexxitDRAVE.mp3"
+    n "After the incident, Hiroo’s ship, the Kryptonite Phantom, was reported as missing to the general public."
+    n "It wasn’t until several eons later that scientists managed to find and recover the AI’s data."
+    n "Inside the hard drive, they discovered the records of Hiroo’s final moments fighting against Kanserous Quiboo and his heroic self-sacrifice."
+    n "He was the only man to ever slay a dinosaur and save humanity."
+    n "As word about his achievement spread, the name Hiroo Onoda the Dinosaur Slayer became renowned across the galaxy."
+    nvl clear
+    window hide
+    with dissolve
+    
     jump credits
 
+#---------------------------- CREDITS ----------------------------#
 #26/05/2015: Added credits, which should appear at all endings. Will probably make them nicer looking later.
 label credits:
     window show
@@ -834,12 +1091,14 @@ label credits:
     n "3D Graphics and Backgrounds by: Muggy Ate"
     n "Project Manager: Brandon Decena"
     n "2D Sprites by: Henri Dela Cruz"
-    n "Writing by: Austin Jamieson"
+    n "Writing by:"
+    n "Austin Jamieson - Storyline and Common Route"
+    n "Brandon Quan - Branching Routes and Miscellaneous Revisions"
+    n "Minh Tran and Brandon Decena - Dinosaur Ending"
     n "Basic Programming by: Brandon Quan"
-    n "Minh Tran: Minh Tran"
-    n "Additional Programming by: Seilai Zhao"
+    n "Additional Programming by: Brandon Decena and Seilai Zhao"
     n "Music by: Peter Gresser, Kevin MacLeod, Frank Nora, and Johannes Schroll from FreePD.com"
-    n "Sound Effects by: Mike Koenig, Matt Cutillo, Kibblesbob, Marianne Gagnon, and Public Domain from SoundBible.com"
+    n "Sound Effects by: Mike Koenig, Matt Cutillo, Kibblesbob, Marianne Gagnon, Mark DiAngelo, and Public Domain from SoundBible.com"
     window hide
     with dissolve
     stop music fadeout 1.0
@@ -848,6 +1107,12 @@ label credits:
     pause 1.0
     
     return
+
+# NOTE: THE BELOW LABEL IS TEMPORARY AND ONLY FOR THE DEMO.
+label end_demo:
+    nn"The end. Thanks for playing!"
+    nn"You ended with [hero_pts] hero points."
+    jump credits
 
 #-------------------------------- FUNCTIONS -----------------------------------#
 
